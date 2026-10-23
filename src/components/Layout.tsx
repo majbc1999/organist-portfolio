@@ -12,13 +12,13 @@ const paths = [
 
 function LangSwitch() {
   const { lang, setLang } = useLang();
-  const opts: [Lang, string, string][] = [["en", "🇬🇧", "EN"], ["sl", "🇸🇮", "SL"]];
+  const opts: Lang[] = ["en", "sl"];
   return (
-    <div className="flex items-center gap-1 text-sm">
-      {opts.map(([code, flag, label]) => (
-        <button key={code} onClick={() => setLang(code)} aria-label={label} aria-pressed={lang === code}
-          className={`rounded px-2 py-1 ${lang === code ? "bg-muted text-foreground" : "text-muted-foreground hover:text-foreground"}`}>
-          <span className="mr-1">{flag}</span>{label}
+    <div className="flex items-center gap-1 text-sm" role="group" aria-label="Language">
+      {opts.map((code) => (
+        <button key={code} onClick={() => setLang(code)} aria-label={code === "en" ? "English" : "Slovenščina"} aria-pressed={lang === code}
+          className={`rounded-full border px-3 py-0.5 tracking-widest uppercase ${lang === code ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:text-foreground"}`}>
+          {code}
         </button>
       ))}
     </div>
