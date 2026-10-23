@@ -136,10 +136,10 @@ const sl: typeof en = {
 };
 
 const dict = { en, sl };
-const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({ lang: "en", setLang: () => {} });
+const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({ lang: "sl", setLang: () => {} });
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang, setLangState] = useState<Lang>("sl");
   useEffect(() => {
     const saved = localStorage.getItem("lang");
     if (saved === "sl" || saved === "en") setLangState(saved);
