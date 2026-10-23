@@ -1,35 +1,56 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import { useLang, type Lang } from "@/lib/i18n";
 
-const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/experience", label: "Experience" },
-  { to: "/services", label: "Services" },
-  { to: "/contact", label: "Contact" },
+const paths = [
+  { to: "/", key: "home" },
+  { to: "/about", key: "about" },
+  { to: "/experience", key: "experience" },
+  { to: "/services", key: "services" },
+  { to: "/contact", key: "contact" },
 ] as const;
+
+function LangSwitch() {
+  const { lang, setLang } = useLang();
+  const opts: [Lang, string, string][] = [["en", "🇬🇧", "EN"], ["sl", "🇸🇮", "SL"]];
+  return (
+    <div className="flex items-center gap-1 text-sm">
+      {opts.map(([code, flag, label]) => (
+        <button key={code} onClick={() => setLang(code)} aria-label={label} aria-pressed={lang === code}
+          className={`rounded px-2 py-1 ${lang === code ? "bg-muted text-foreground" : "text-muted-foreground hover:text-foreground"}`}>
+          <span className="mr-1">{flag}</span>{label}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const { t } = useLang();
   return (
     <header className="border-b">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
         <Link to="/" className="font-serif text-2xl">Anna Novak</Link>
-        <nav className="hidden gap-8 text-sm md:flex">
-          {links.map((l) => (
-            <Link key={l.to} to={l.to} className="text-muted-foreground hover:text-foreground"
-              activeProps={{ className: "text-foreground underline underline-offset-8" }}
-              activeOptions={{ exact: true }}>{l.label}</Link>
-          ))}
-        </nav>
-        <button className="text-sm md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
-          {open ? "Close" : "Menu"}
-        </button>
+        <div className="hidden items-center gap-8 md:flex">
+          <nav className="flex gap-8 text-sm">
+            {paths.map((l) => (
+              <Link key={l.to} to={l.to} className="text-muted-foreground hover:text-foreground"
+                activeProps={{ className: "text-foreground underline underline-offset-8" }}
+                activeOptions={{ exact: true }}>{t.nav[l.key]}</Link>
+            ))}
+          </nav>
+          <LangSwitch />
+        </div>
+        <div className="flex items-center gap-2 md:hidden">
+          <LangSwitch />
+          <button className="text-sm" onClick={() => setOpen(!open)}>{open ? t.close : t.menu}</button>
+        </div>
       </div>
       {open && (
         <nav className="flex flex-col gap-4 border-t px-6 py-5 md:hidden">
-          {links.map((l) => (
-            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="font-serif text-xl">{l.label}</Link>
+          {paths.map((l) => (
+            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="font-serif text-xl">{t.nav[l.key]}</Link>
           ))}
         </nav>
       )}
@@ -38,10 +59,11 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
+  const { t } = useLang();
   return (
     <footer className="mt-24 border-t">
       <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-muted-foreground md:flex-row md:justify-between">
-        <span>© {new Date().getFullYear()} Anna Novak · Organist & Music Educator</span>
+        <span>© {new Date().getFullYear()} Anna Novak · {t.role}</span>
         <a href="mailto:anna.novak@example.com" className="hover:text-foreground">anna.novak@example.com</a>
       </div>
     </footer>
