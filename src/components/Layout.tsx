@@ -47,13 +47,18 @@ export function SiteHeader() {
           <button className="text-sm" onClick={() => setOpen(!open)}>{open ? t.close : t.menu}</button>
         </div>
       </div>
-      {open && (
-        <nav className="flex flex-col gap-4 border-t px-6 py-5 md:hidden">
-          {paths.map((l) => (
-            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="font-serif text-xl">{t.nav[l.key]}</Link>
-          ))}
-        </nav>
-      )}
+      <nav
+        aria-hidden={!open}
+        className={`grid transition-[grid-template-rows] duration-200 ease-out motion-reduce:transition-none md:hidden ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+      >
+        <div className="overflow-hidden">
+          <div className="flex flex-col gap-4 border-t px-6 py-5">
+            {paths.map((l) => (
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="font-serif text-xl">{t.nav[l.key]}</Link>
+            ))}
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }
