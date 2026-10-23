@@ -4,7 +4,7 @@ import { meta, PageIntro } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/about")({
-  head: () => meta("About — Anna Novak, Organist", "Biography, musical background and education of organist Anna Novak."),
+  head: () => meta("O meni — Anna Novak, organistka", "Življenjepis, glasbena pot in izobrazba organistke Anne Novak."),
   component: About,
 });
 

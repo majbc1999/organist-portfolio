@@ -5,7 +5,7 @@ import { meta } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
-  head: () => meta("Anna Novak — Organist & Music Educator", "Organist for weddings, ceremonies, church services and concerts, and organ teacher."),
+  head: () => meta("Anna Novak — Organistka & glasbena pedagoginja", "Organistka za poroke, slovesnosti, bogoslužja in koncerte ter učiteljica orgel."),
   component: Index,
 });
 

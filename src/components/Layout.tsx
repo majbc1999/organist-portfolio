@@ -12,7 +12,7 @@ const paths = [
 
 function LangSwitch() {
   const { lang, setLang } = useLang();
-  const opts: Lang[] = ["en", "sl"];
+  const opts: Lang[] = ["sl", "en"];
   return (
     <div className="flex items-center gap-1 text-sm" role="group" aria-label="Language">
       {opts.map((code) => (
