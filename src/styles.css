@@ -30,6 +30,17 @@
   --border: oklch(0.87 0.02 75);
 }
 
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-fade {
+    animation: page-fade-in 180ms ease-out both;
+  }
+}
+
 @layer base {
   * { border-color: var(--color-border); }
   body {

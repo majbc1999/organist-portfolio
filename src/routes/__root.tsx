@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -13,7 +14,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter } from "../components/Layout";
-import { LangProvider } from "../lib/i18n";
+import { LangProvider, useLang } from "../lib/i18n";
 
 function NotFoundComponent() {
   return (
@@ -121,11 +122,21 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <LangProvider>
       <SiteHeader />
-      <main>
-        <Outlet />
-      </main>
+      <FadedMain />
       <SiteFooter />
       </LangProvider>
     </QueryClientProvider>
+  );
+}
+
+/* Fades the page in over ~180ms on every navigation and language switch. */
+function FadedMain() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { lang } = useLang();
+
+  return (
+    <main key={`${pathname}-${lang}`} className="page-fade">
+      <Outlet />
+    </main>
   );
 }
