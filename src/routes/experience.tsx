@@ -24,8 +24,8 @@ function Block({ title, items }: { title: string; items: string[][] }) {
     <section className="mx-auto max-w-3xl px-6 py-10">
       <h2 className="border-b pb-3 text-3xl">{title}</h2>
       <ul>
-        {items.map(([date, t, place, desc]) => (
-          <li key={t + date} className="grid gap-1 border-b py-6 md:grid-cols-[10rem_1fr] md:gap-6">
+        {items.map(([date, t, place, desc], i) => (
+          <li key={i} className="grid gap-1 border-b py-6 md:grid-cols-[10rem_1fr] md:gap-6">
             <span className="text-sm text-accent">{date}</span>
             <div>
               <h3 className="text-2xl">{t}</h3>
