@@ -3,7 +3,7 @@ import { meta, PageIntro } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/experience")({
-  head: () => meta("Experience — Anna Novak, Organist", "Professional positions, notable concerts and education of organist Anna Novak."),
+  head: () => meta("Izkušnje — Anna Novak, organistka", "Poklicne zaposlitve, izbrani koncerti in izobrazba organistke Anne Novak."),
   component: Experience,
 });
 

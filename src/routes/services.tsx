@@ -3,7 +3,7 @@ import { meta, PageIntro } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/services")({
-  head: () => meta("Services — Anna Novak, Organist", "Organist for weddings, funerals, church services, concerts and accompaniment, plus organ lessons."),
+  head: () => meta("Storitve — Anna Novak, organistka", "Organistka za poroke, pogrebe, bogoslužja, koncerte in spremljavo ter ure orgel."),
   component: Services,
 });
 
