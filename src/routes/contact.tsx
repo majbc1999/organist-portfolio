@@ -3,7 +3,7 @@ import { meta, PageIntro } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/contact")({
-  head: () => meta("Kontakt — Anna Novak, organistka", "Pišite Ani Novak za dogovor o igranju na poroki, bogoslužju, koncertu ali urah orgel."),
+  head: () => meta("Kontakt — Karin Zuza, organistka", "Pišite Karin Zuza za dogovor o igranju na poroki, bogoslužju, koncertu ali urah orgel."),
   component: Contact,
 });
 
@@ -16,8 +16,8 @@ function Contact() {
       <section className="mx-auto max-w-xl px-6 text-center">
         <div className="rounded-lg border bg-card p-10">
           <p className="eyebrow">{c.email}</p>
-          <a href="mailto:anna.novak@example.com" className="mt-3 block break-all font-serif text-3xl hover:text-primary">
-            anna.novak@example.com
+          <a href="mailto:karin.zuza1@gmail.com" className="mt-3 block break-all font-serif text-3xl hover:text-primary">
+            karin.zuza1@gmail.com
           </a>
           <p className="eyebrow mt-10">{c.elsewhere}</p>
           <div className="mt-3 flex justify-center gap-6">

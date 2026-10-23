@@ -20,10 +20,10 @@ const en = {
   about: {
     eyebrow: "About", title: "A life in music",
     paras: [
-      "Anna Novak is an organist and music educator whose playing is known for its clarity, warmth and sensitivity to the occasion. She first sat at the organ at the age of twelve in her local parish church, and has been devoted to the instrument ever since.",
+      "Karin Zuza is an organist and music educator whose playing is known for its clarity, warmth and sensitivity to the occasion. She first sat at the organ at the age of twelve in her local parish church, and has been devoted to the instrument ever since.",
       "She studied organ performance at the Academy of Music, followed by a master's degree in church music, with additional masterclasses in historical performance practice in Germany and the Netherlands.",
       "Her repertoire spans from Baroque masters such as Bach and Buxtehude to the French Romantic tradition and contemporary works. Alongside performing, she finds great joy in teaching and in sharing the instrument with new generations of players.",
-      "Outside of music, Anna enjoys visiting historic churches and their organs, reading, and long walks in the countryside.",
+      "Outside of music, Karin enjoys visiting historic churches and their organs, reading, and long walks in the countryside.",
     ],
     education: "Education",
     eduList: ["M.Mus. Church Music — Academy of Music, 2016", "B.Mus. Organ Performance — Academy of Music, 2014", "Masterclasses in Haarlem and Leipzig, 2015–2019"],
@@ -86,7 +86,7 @@ const sl: typeof en = {
   about: {
     eyebrow: "O meni", title: "Življenje v glasbi",
     paras: [
-      "Anna Novak je organistka in glasbena pedagoginja, katere igranje odlikujejo jasnost, toplina in občutek za priložnost. Za orgle je prvič sedla pri dvanajstih letih v domači župnijski cerkvi in jim je od takrat predana.",
+      "Karin Zuza je organistka in glasbena pedagoginja, katere igranje odlikujejo jasnost, toplina in občutek za priložnost. Za orgle je prvič sedla pri dvanajstih letih v domači župnijski cerkvi in jim je od takrat predana.",
       "Študirala je orgle na Akademiji za glasbo, nato pa magistrirala iz cerkvene glasbe in se dodatno izpopolnjevala na mojstrskih tečajih zgodovinske izvajalske prakse v Nemčiji in na Nizozemskem.",
       "Njen repertoar sega od baročnih mojstrov, kot sta Bach in Buxtehude, do francoske romantike in sodobnih del. Poleg nastopanja ji veliko veselje prinaša poučevanje in predajanje ljubezni do orgel novim generacijam.",
       "V prostem času rada obiskuje zgodovinske cerkve in njihove orgle, bere in se sprehaja po naravi.",

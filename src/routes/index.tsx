@@ -5,7 +5,7 @@ import { meta } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
-  head: () => meta("Anna Novak — Organistka & glasbena pedagoginja", "Organistka za poroke, slovesnosti, bogoslužja in koncerte ter učiteljica orgel."),
+  head: () => meta("Karin Zuza — Organistka & glasbena pedagoginja", "Organistka za poroke, slovesnosti, bogoslužja in koncerte ter učiteljica orgel."),
   component: Index,
 });
 
@@ -16,14 +16,14 @@ function Index() {
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
         <div className="order-2 md:order-1">
           <p className="eyebrow">{t.role}</p>
-          <h1 className="mt-4 text-5xl md:text-7xl">Anna Novak</h1>
+          <h1 className="mt-4 text-5xl md:text-7xl">Karin Zuza</h1>
           <p className="mt-6 max-w-md text-lg text-muted-foreground">{t.home.lead}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" className="btn-primary">{t.home.cta}</Link>
             <Link to="/about" className="btn-outline">{t.home.more}</Link>
           </div>
         </div>
-        <img src={portrait} alt="Anna Novak" width={1024} height={1280}
+        <img src={portrait} alt="Karin Zuza" width={1024} height={1280}
           className="order-1 aspect-[4/5] w-full rounded-lg object-cover md:order-2" />
       </section>
 

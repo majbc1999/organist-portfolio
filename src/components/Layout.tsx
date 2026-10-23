@@ -31,7 +31,7 @@ export function SiteHeader() {
   return (
     <header className="border-b">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
-        <Link to="/" className="font-serif text-2xl">Anna Novak</Link>
+        <Link to="/" className="font-serif text-2xl">Karin Zuza</Link>
         <div className="hidden items-center gap-8 md:flex">
           <nav className="flex gap-8 text-sm">
             {paths.map((l) => (
@@ -68,8 +68,8 @@ export function SiteFooter() {
   return (
     <footer className="mt-24 border-t">
       <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-muted-foreground md:flex-row md:justify-between">
-        <span>© {new Date().getFullYear()} Anna Novak · {t.role}</span>
-        <a href="mailto:anna.novak@example.com" className="hover:text-foreground">anna.novak@example.com</a>
+        <span>© {new Date().getFullYear()} Karin Zuza · {t.role}</span>
+        <a href="mailto:karin.zuza1@gmail.com" className="hover:text-foreground">karin.zuza1@gmail.com</a>
       </div>
     </footer>
   );
