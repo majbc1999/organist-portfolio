@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -121,11 +122,21 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <LangProvider>
       <SiteHeader />
-      <main>
-        <Outlet />
-      </main>
+      <FadedMain />
       <SiteFooter />
       </LangProvider>
     </QueryClientProvider>
+  );
+}
+
+/* Fades the page in over ~180ms on every navigation and language switch. */
+function FadedMain() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { lang } = useLang();
+
+  return (
+    <main key={`${pathname}-${lang}`} className="page-fade">
+      <Outlet />
+    </main>
   );
 }
