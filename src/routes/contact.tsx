@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { meta, PageIntro } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/contact")({
-  head: () => meta("Kontakt — Karin Zuza, organistka", "Pišite Karin Zuza za dogovor o igranju na poroki, bogoslužju, koncertu ali urah orgel."),
+  head: () => meta("Kontakt — Karin Zuza", "Kontaktni podatki za vprašanja o pouku, korepeticijah in nastopih Karin Zuza."),
   component: Contact,
 });
 
@@ -20,11 +20,9 @@ function Contact() {
             karin.zuza1@gmail.com
           </a>
           <p className="eyebrow mt-10">{c.elsewhere}</p>
-          <div className="mt-3 flex justify-center gap-6">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">Instagram</a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">YouTube</a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">Facebook</a>
-          </div>
+          <Link to="/experience" className="mt-3 inline-block underline underline-offset-4 hover:text-primary">
+            {t.exp.videosTitle}
+          </Link>
         </div>
       </section>
     </>

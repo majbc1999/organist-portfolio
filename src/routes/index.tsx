@@ -5,7 +5,7 @@ import { meta } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
-  head: () => meta("Karin Zuza — Organistka & glasbena pedagoginja", "Organistka za poroke, slovesnosti, bogoslužja in koncerte ter učiteljica orgel."),
+  head: () => meta("Karin Zuza — Organistka in glasbena pedagoginja", "Organistka, pianistka in glasbena pedagoginja. Poučevanje orgel, klavirska korepeticija in koncertna dejavnost."),
   component: Index,
 });
 
@@ -39,12 +39,12 @@ function Index() {
       </section>
 
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2">
-        <img src={organ} alt="" loading="lazy" width={1280} height={896} className="aspect-[4/3] w-full rounded-lg object-cover" />
-        <blockquote>
-          <p className="font-serif text-3xl italic leading-snug md:text-4xl">{t.home.quote}</p>
-          <footer className="mt-4 text-sm text-muted-foreground">— W. A. Mozart</footer>
+        <img src={organ} alt="Organ keyboard and stops" loading="lazy" width={1280} height={896} className="aspect-[4/3] w-full rounded-lg object-cover" />
+        <div>
+          <h2 className="text-4xl md:text-5xl">{t.home.featureTitle}</h2>
+          <p className="mt-4 text-lg text-muted-foreground">{t.home.featureText}</p>
           <Link to="/services" className="btn-outline mt-8">{t.home.viewServices}</Link>
-        </blockquote>
+        </div>
       </section>
     </>
   );

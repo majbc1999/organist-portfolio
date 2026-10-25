@@ -81,8 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Karin Zuza — Organist" },
-      { name: "description", content: "Organist & Music Educator" },
+      { title: "Karin Zuza — Organistka / Organist & Music Educator" },
+      { name: "description", content: "Karin Zuza, organistka, pianistka in glasbena pedagoginja. Organist, pianist and music educator." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
