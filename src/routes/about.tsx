@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import portrait from "@/assets/portrait.jpg";
+import portrait from "@/assets/portrait-about-me.png";
 import { meta, PageIntro } from "@/components/Layout";
 import { useLang } from "@/lib/i18n";
 
@@ -15,7 +15,7 @@ function About() {
     <>
       <PageIntro eyebrow={a.eyebrow} title={a.title} />
       <section className="mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[2fr_3fr]">
-        <img src={portrait} alt="Karin Zuza" className="aspect-[4/5] w-full rounded-lg object-cover" />
+        <img src={portrait} alt="Karin Zuza" width={681} height={512} className="h-auto w-full self-start rounded-lg" />
         <div className="space-y-8">
           <div className="space-y-5 text-lg">
             {a.paras.map((p, i) => <p key={i}>{p}</p>)}

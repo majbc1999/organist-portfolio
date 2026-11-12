@@ -23,8 +23,8 @@ function Index() {
             <Link to="/about" className="btn-outline">{t.home.more}</Link>
           </div>
         </div>
-        <img src={portrait} alt="Karin Zuza" width={1024} height={1280}
-          className="order-1 aspect-[4/5] w-full rounded-lg object-cover md:order-2" />
+        <img src={portrait} alt="Karin Zuza" width={4159} height={4172}
+          className="order-1 h-auto w-full rounded-lg md:order-2" />
       </section>
 
       <section className="border-y bg-card">
