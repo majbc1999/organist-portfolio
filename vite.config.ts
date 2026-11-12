@@ -25,5 +25,5 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  nitro: { preset: "static" },
+  nitro: process.env.PAGES_BASE_PATH ? false : undefined,
 });
