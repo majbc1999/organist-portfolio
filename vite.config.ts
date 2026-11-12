@@ -6,10 +6,24 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const pagesBasePath = process.env.PAGES_BASE_PATH ?? "/";
+const routerBasepath =
+  pagesBasePath === "/" ? "/" : pagesBasePath.replace(/\/$/, "");
+
 export default defineConfig({
+  vite: {
+    base: pagesBasePath,
+  },
   tanstackStart: {
+    router: { basepath: routerBasepath },
+    prerender: {
+      enabled: true,
+      autoStaticPathsDiscovery: true,
+      failOnError: true,
+    },
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: { preset: "static" },
 });

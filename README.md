@@ -33,3 +33,14 @@ Build the site and preview the production output locally:
 npm run build
 npm run preview
 ```
+
+## Deploy to GitHub Pages
+
+The `Deploy to GitHub Pages` workflow builds the static site and deploys it whenever changes are pushed to `main`.
+
+1. Push the repository to GitHub.
+2. In the repository, open **Settings → Pages** and set the build and deployment source to **GitHub Actions**.
+3. Open the **Actions** tab and wait for the `Deploy to GitHub Pages` workflow to finish.
+4. Visit `https://majbc1999.github.io/organist-portfolio/`.
+
+The workflow uses `/organist-portfolio/` as the base path for the GitHub Pages project URL. When connecting a custom domain later, change `PAGES_BASE_PATH` in `.github/workflows/deploy.yml` to `/`, then add the domain under **Settings → Pages** and configure its DNS records with the registrar.
