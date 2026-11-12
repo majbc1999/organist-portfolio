@@ -19,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PAGES_BASE_PATH: /organist-portfolio/
+      PAGES_BASE_PATH: /
     steps:
       - name: Checkout
         uses: actions/checkout@v4

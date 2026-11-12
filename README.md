@@ -43,4 +43,4 @@ The `Deploy to GitHub Pages` workflow builds the static site and deploys it when
 3. Open the **Actions** tab and wait for the `Deploy to GitHub Pages` workflow to finish.
 4. Visit `https://majbc1999.github.io/organist-portfolio/`.
 
-The workflow uses `/organist-portfolio/` as the base path for the GitHub Pages project URL. When connecting a custom domain later, change `PAGES_BASE_PATH` in `.github/workflows/deploy.yml` to `/`, then add the domain under **Settings → Pages** and configure its DNS records with the registrar.
+The workflow uses `/organist-portfolio/` as the base path for the GitHub Pages project URL. For the custom domain, `PAGES_BASE_PATH` is `/` and `public/CNAME` contains the domain. Add the domain under **Settings → Pages** and configure its DNS records with the registrar.
